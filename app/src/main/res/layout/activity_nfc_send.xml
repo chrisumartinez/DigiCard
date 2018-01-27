@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NfcSendActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/root"
+        app:layout_constraintLeft_toLeftOf="@id/root"
+        app:layout_constraintRight_toRightOf="@id/root"
+        app:layout_constraintTop_toTopOf="@id/root"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -4,36 +4,18 @@ import android.content.Intent
 import android.nfc.NdefMessage
 import android.nfc.NfcAdapter
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import timber.log.Timber
 
-class NfcActivity : AppCompatActivity() {
+class NfcReceiveActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nfc)
+        setContentView(R.layout.activity_nfc_receive)
         textView = findViewById(R.id.nfc_data)
-
-        val nfcAdapter = NfcAdapter.getDefaultAdapter(this)
-        when (nfcAdapter) {
-            null -> {
-                Snackbar
-                        .make(textView, R.string.nfc_not_available, Snackbar.LENGTH_LONG)
-                        .show()
-            }
-
-            else -> {
-                nfcAdapter.setNdefPushMessageCallback(NdefMessageCreator(), this)
-                Timber.e("Setup ndef message callback")
-                Snackbar
-                        .make(textView, R.string.trying_to_pair_up, Snackbar.LENGTH_LONG)
-                        .show()
-            }
-        }
     }
 
 

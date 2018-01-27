@@ -10,8 +10,8 @@ object UserMapper {
             .build()
             .adapter(User::class.java)
 
-    fun to(user: User): String = userAdapter.toJson(user)
-    fun from(json: String): User = userAdapter.fromJson(json)!!
+    fun toJson(user: User): String = userAdapter.toJson(user)
+    fun fromJson(json: String): User = userAdapter.fromJson(json)!!
 
 
     private class UuidAdapter : JsonAdapter<UUID>() {
