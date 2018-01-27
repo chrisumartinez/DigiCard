@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Digicard</string>
+
     <string name="firstName">First Name</string>
-    <string name = "lastName">Last Name</string>
-    <string name = "email">Email</string>
-    <string name = "LinkedIn">LinkedIn</string>
+    <string name="lastName">Last Name</string>
+    <string name="email">Email</string>
+    <string name="LinkedIn">LinkedIn</string>
+
+    <string name="beam">BEAM</string>
+    <string name="nfc_not_available">NFC is not available in this device!</string>
+    <string name="trying_to_pair_up">Searching for another NFC device to pair up</string>
+    <string name="receiving_ndef_data">Receiving data from another NFC device</string>
 </resources>
