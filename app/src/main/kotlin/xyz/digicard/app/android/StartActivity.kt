@@ -34,5 +34,8 @@ class StartActivity : AppCompatActivity() {
         findViewById<View>(R.id.register).setOnClickListener {
             startActivity(Intent(this, NewActivity::class.java))
         }
+        findViewById<View>(R.id.menu).setOnClickListener{
+            startActivity(Intent(this, Menu::class.java))
+        }
     }
 }
