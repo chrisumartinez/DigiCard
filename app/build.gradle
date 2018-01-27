@@ -33,5 +33,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.6.0'
 
+    implementation 'com.jayrave.falkon:falkon-android:0.15-alpha'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
