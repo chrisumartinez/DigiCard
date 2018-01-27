@@ -8,20 +8,20 @@ import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
 
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        View register_button = findViewById(R.id.register_button);
+        View register_button = findViewById(R.id.reg_btn);
         register_button.setOnClickListener(this);
-        }
+    }
 
     public void onClick(View v){
         openNewActivity(v);
     }
     public void openNewActivity(View v){
-        if(v.getId() == R.id.register_button){
-            Button btn = (Button)findViewById(R.id.register_button);
+        if(v.getId() == R.id.reg_btn){
+            Button btn = (Button)findViewById(R.id.reg_btn);
             btn.setText("Debugging");
             Intent intent  = new Intent(MainActivity2.this, NewActivity.class);
             startActivity(intent);
@@ -29,4 +29,3 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     }
 
 }
-
