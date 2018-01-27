@@ -35,7 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewActivity">
-
+        </activity>
+        <activity android:name=".Menu">
         </activity>
     </application>
 
