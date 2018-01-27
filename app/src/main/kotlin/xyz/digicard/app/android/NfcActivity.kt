@@ -6,23 +6,23 @@ import android.nfc.NfcAdapter
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.View
+import android.widget.TextView
 import timber.log.Timber
 
 class NfcActivity : AppCompatActivity() {
 
-    private lateinit var contentFrame: View
+    private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nfc)
-        contentFrame = findViewById(R.id.content_frame)
+        textView = findViewById(R.id.nfc_data)
 
         val nfcAdapter = NfcAdapter.getDefaultAdapter(this)
         when (nfcAdapter) {
             null -> {
                 Snackbar
-                        .make(contentFrame, R.string.nfc_not_available, Snackbar.LENGTH_LONG)
+                        .make(textView, R.string.nfc_not_available, Snackbar.LENGTH_LONG)
                         .show()
             }
 
@@ -30,7 +30,7 @@ class NfcActivity : AppCompatActivity() {
                 nfcAdapter.setNdefPushMessageCallback(NdefMessageCreator(), this)
                 Timber.e("Setup ndef message callback")
                 Snackbar
-                        .make(contentFrame, R.string.trying_to_pair_up, Snackbar.LENGTH_LONG)
+                        .make(textView, R.string.trying_to_pair_up, Snackbar.LENGTH_LONG)
                         .show()
             }
         }
@@ -50,15 +50,20 @@ class NfcActivity : AppCompatActivity() {
 
 
     override fun onNewIntent(intent: Intent) {
-        setIntent(intent) // onResume gets called after this to handle the intent
+        // onResume gets called after this to handle the intent as
+        // this is a `singleTop` activity
+        setIntent(intent)
     }
 
 
     private fun processIntent(intent: Intent) {
-        NdefMessageProcessor.process(
-                ndefMessage = intent
-                        .getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES)
-                        .first() as NdefMessage // Only one message is sent at a time
-        )
+        val message = intent
+                .getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES)
+                .first() as NdefMessage // Only one message is sent at a time
+
+        NdefMessageProcessor.process(message)
+        if (BuildConfig.DEBUG) {
+            textView.text = "${textView.text}\n${String(message.records.first().payload)}"
+        }
     }
 }

@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".NfcActivity">
 
-    <FrameLayout
-        android:id="@+id/content_frame"
+    <TextView
+        android:id="@+id/nfc_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="NFC Data:"/>
 
 </android.support.constraint.ConstraintLayout>
