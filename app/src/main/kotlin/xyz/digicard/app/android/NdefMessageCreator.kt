@@ -14,9 +14,7 @@ class NdefMessageCreator : NfcAdapter.CreateNdefMessageCallback {
                 NdefRecord.createMime(
                         "application/vnd.xyz.digicard.app.android.beam",
                         "Digicard beam Time: ${System.currentTimeMillis()}".toByteArray()
-                ),
-
-                NdefRecord.createApplicationRecord("xyz.digicard.app.android")
+                )
         ))
     }
 }
