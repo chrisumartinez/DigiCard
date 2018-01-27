@@ -15,7 +15,11 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".NfcActivity"
+            android:name=".NfcSendActivity"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".NfcReceiveActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
