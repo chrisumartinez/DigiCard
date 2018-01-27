@@ -35,6 +35,8 @@ dependencies {
 
     implementation 'com.jayrave.falkon:falkon-android:0.15-alpha'
 
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     implementation 'com.squareup.moshi:moshi:1.5.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

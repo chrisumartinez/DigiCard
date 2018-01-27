@@ -8,6 +8,7 @@ import com.jayrave.falkon.dao.insert
 import xyz.digicard.app.android.models.User
 import xyz.digicard.app.android.models.UsersTable
 import java.util.*
+import kotlin.math.absoluteValue
 
 class StartActivity : AppCompatActivity() {
 
@@ -19,7 +20,7 @@ class StartActivity : AppCompatActivity() {
 
             // Until we have a login/signup screen I am creating a new
             // dummy user every time!
-            val randomInt = Random().nextInt()
+            val randomInt = Random().nextInt().absoluteValue
             val user = User(
                     id = UUID.randomUUID(),
                     firstName = "First_$randomInt",

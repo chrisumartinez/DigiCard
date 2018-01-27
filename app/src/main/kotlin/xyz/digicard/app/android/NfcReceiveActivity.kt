@@ -43,9 +43,10 @@ class NfcReceiveActivity : AppCompatActivity() {
                 .getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES)
                 .first() as NdefMessage // Only one message is sent at a time
 
-        NdefMessageProcessor.process(message)
-        if (BuildConfig.DEBUG) {
-            textView.text = "${textView.text}\n${String(message.records.first().payload)}"
+        val connectedUserId = NdefMessageProcessor.process(message)
+        if (connectedUserId != null) {
+            ConnectedUserActivity.startActivity(this, connectedUserId)
+            finish()
         }
     }
 }

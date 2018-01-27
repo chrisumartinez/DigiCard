@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="connected_user_avatar_dimen">150dp</dimen>
+
+</resources>
