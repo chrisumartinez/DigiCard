@@ -18,6 +18,11 @@
         app:layout_constraintRight_toRightOf="@id/root"
         app:layout_constraintTop_toTopOf="@id/root"/>
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu"
+        android:text="Main Menu"/>
+    <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

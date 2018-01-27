@@ -47,6 +47,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/LinkedIn"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Occupancy" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Occupancy"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
