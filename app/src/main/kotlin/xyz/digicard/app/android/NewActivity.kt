@@ -10,7 +10,6 @@ import android.widget.Toast
 import com.jayrave.falkon.dao.insert
 import xyz.digicard.app.android.models.User
 import xyz.digicard.app.android.models.UsersTable
-import java.util.*
 import java.util.UUID.randomUUID
 
 class NewActivity : AppCompatActivity(), View.OnClickListener {
@@ -26,15 +25,17 @@ class NewActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         val UUID = randomUUID()
         var view:EditText = findViewById(R.id.firstName)
-        val firstName = view.getText().toString()
+        val firstName = view.text.toString()
         view = findViewById(R.id.lastName)
-        val lastName:String = view.getText().toString()
+        val lastName:String = view.text.toString()
         view = findViewById(R.id.email)
         val email:String = view.getText().toString()
         view = findViewById(R.id.purpose)
         val purpose:String = view.getText().toString()
         val user = User(UUID, firstName, lastName, email, purpose)
+        CurrentUser.putId(user.id, this)
         UsersTable.instance.dao.insert(user)
+
         Toast.makeText(v.context, "Register Complete!", Toast.LENGTH_LONG).show()
         val btn:Button = findViewById(R.id.submitButton)
         startActivity(Intent(this, Menu::class.java))
