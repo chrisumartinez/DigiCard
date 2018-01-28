@@ -1,16 +1,12 @@
 package xyz.digicard.app.android
 
 import android.support.v4.content.res.ResourcesCompat
-import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import xyz.digicard.app.android.NewAdapter.ViewHolder
-
 import xyz.digicard.app.android.models.User
 
 class NewAdapter(private val data: List<User>) : RecyclerView.Adapter<NewAdapter.ViewHolder>() {
@@ -63,7 +59,7 @@ class NewAdapter(private val data: List<User>) : RecyclerView.Adapter<NewAdapter
         }
 
         private fun findDrawableResId(): Int {
-            val codeInt = user.id.toString().first().toInt().rem(9) + 1
+            val codeInt = user.firstName.first().toInt().rem(9) + 1
             return when (codeInt) {
                 1 -> R.drawable.a1
                 2 -> R.drawable.a2
