@@ -2,7 +2,6 @@ package xyz.digicard.app.android
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,10 +11,12 @@ import com.mikepenz.community_material_typeface_library.CommunityMaterial
 import com.mikepenz.iconics.IconicsDrawable
 import xyz.digicard.app.android.models.UsersTable
 
-
 class Menu : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onResume() {
+        super.onResume()
+
+        // Doing the setup in `onResume` to refresh the page every time this is shown
         val userObjects = UsersTable.instance.dao.findAll()
         setContentView(R.layout.activity_menu)
 
