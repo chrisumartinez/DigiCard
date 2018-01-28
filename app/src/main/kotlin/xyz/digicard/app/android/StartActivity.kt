@@ -25,7 +25,8 @@ class StartActivity : AppCompatActivity() {
                     id = UUID.randomUUID(),
                     firstName = "First_$randomInt",
                     lastName = "Last_$randomInt",
-                    email = "Email_$randomInt"
+                    email = "Email_$randomInt",
+                    purpose = "Purpose_$randomInt"
             )
 
             // Put the user in the db & start beaming
@@ -37,6 +38,9 @@ class StartActivity : AppCompatActivity() {
         }
         findViewById<View>(R.id.menu).setOnClickListener{
             startActivity(Intent(this, Menu::class.java))
+        }
+        findViewById<View>(R.id.nearby_connections).setOnClickListener{
+            startActivity(Intent(this, NearbyConnections::class.java))
         }
     }
 }

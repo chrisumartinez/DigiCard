@@ -40,6 +40,7 @@
         <activity android:name=".Menu">
         </activity>
         <activity android:name=".ConnectedUserActivity"/>
+        <activity android:name=".NearbyConnections"/>
     </application>
 
 </manifest>

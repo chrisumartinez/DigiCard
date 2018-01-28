@@ -48,11 +48,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Occupancy" />
+        android:text="What Keeps You Up At Night?" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Occupancy"/>
+        android:id="@+id/purpose"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

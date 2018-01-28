@@ -34,6 +34,7 @@ class UsersTable private constructor(context: Context) :
     private val lastName = col(User::lastName, isNonNull = true)
     private val email = col(User::email, isNonNull = true)
     private val phone = col(User::phone)
+    private val purpose = col(User::purpose)
     private val company = col(User::company)
     private val photoUrl = col(User::photoUrl)
     private val linkedInUrl = col(User::linkedInUrl)
@@ -53,6 +54,7 @@ class UsersTable private constructor(context: Context) :
                 lastName = value of lastName,
                 email = value of email,
                 phone = value of phone,
+                purpose = value of purpose,
                 company = value of company,
                 photoUrl = value of photoUrl,
                 linkedInUrl = value of linkedInUrl,
@@ -98,7 +100,7 @@ class UsersTable private constructor(context: Context) :
         private fun sqliteOpenHelper(context: Context): SQLiteOpenHelper {
             return object : SQLiteOpenHelper(context, "digicard", null, 1) {
                 override fun onCreate(db: SQLiteDatabase) {
-                    db.execSQL("CREATE TABLE users (id TEXT NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT, company TEXT, photo_url TEXT, linked_in_url TEXT, tags TEXT, PRIMARY KEY (id))")
+                    db.execSQL("CREATE TABLE users (id TEXT NOT NULL, first_name TEXT NOT NULL, last_name TEXT NOT NULL, email TEXT NOT NULL, purpose TEXT, phone TEXT, company TEXT, photo_url TEXT, linked_in_url TEXT, tags TEXT, PRIMARY KEY (id))")
                 }
 
                 override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
