@@ -11,5 +11,7 @@ data class User(
         val company: String? = null,
         val photoUrl: String? = null,
         val linkedInUrl: String? = null,
-        val tags: String? = null
-)
+        val tags: String? = null) {
+
+    val fullName get() = "$firstName $lastName"
+}

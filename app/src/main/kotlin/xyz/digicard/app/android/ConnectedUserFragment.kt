@@ -1,7 +1,7 @@
 package xyz.digicard.app.android
 
 import android.os.Bundle
-import android.support.annotation.StringRes
+import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,21 +32,10 @@ class ConnectedUserFragment : Fragment() {
 
 
     private fun populateViews(view: View, user: User) {
-        val firstNameGroup = view.findViewById<View>(R.id.first_name)
-        firstNameGroup.assignInfoName(R.string.firstName)
-        firstNameGroup.assignInfoValue(user.firstName)
-
-        val lastNameGroup = view.findViewById<View>(R.id.last_name)
-        lastNameGroup.assignInfoName(R.string.lastName)
-        lastNameGroup.assignInfoValue(user.lastName)
-
-        val emailGroup = view.findViewById<View>(R.id.email)
-        emailGroup.assignInfoName(R.string.email)
-        emailGroup.assignInfoValue(user.email)
-
-        val phoneGroup = view.findViewById<View>(R.id.phone_number)
-        phoneGroup.assignInfoName(R.string.phone_number)
-        phoneGroup.assignInfoValue(user.phone)
+        view.setTextOrHide(R.id.full_name, user.fullName)
+        view.setTextOrHide(R.id.email, user.email)
+        view.setTextOrHide(R.id.company, user.company)
+        view.setTextOrHide(R.id.phone_number, user.phone)
     }
 
 
@@ -63,14 +52,15 @@ class ConnectedUserFragment : Fragment() {
             }
         }
 
-        private fun View.assignInfoName(@StringRes resId: Int) {
-            val infoName = findViewById<TextView>(R.id.info_name)
-            infoName.text = context.getString(resId)
-        }
-
-        private fun View.assignInfoValue(value: String?) {
-            val infoValue = findViewById<TextView>(R.id.info_value)
-            infoValue.text = value
+        private fun View.setTextOrHide(@IdRes resId: Int, text: String?) {
+            val textView = findViewById<TextView>(resId)
+            when {
+                text.isNullOrEmpty() -> textView.visibility = View.GONE
+                else -> {
+                    textView.visibility = View.VISIBLE
+                    textView.text = text
+                }
+            }
         }
     }
 }
