@@ -16,7 +16,8 @@
 
         <activity
             android:name=".NfcSendActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:noHistory="true"/>
 
         <activity
             android:name=".NfcReceiveActivity"
@@ -38,6 +39,7 @@
         </activity>
         <activity android:name=".Menu">
         </activity>
+        <activity android:name=".ConnectedUserActivity"/>
     </application>
 
 </manifest>

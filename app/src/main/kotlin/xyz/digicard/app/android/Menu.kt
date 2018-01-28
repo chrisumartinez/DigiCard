@@ -7,13 +7,16 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.jayrave.falkon.dao.findAll
+import com.jayrave.falkon.dao.insert
+import xyz.digicard.app.android.models.User
 import xyz.digicard.app.android.models.UsersTable
+import java.util.*
+import java.util.UUID.randomUUID
 
 
 class Menu : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val userObjects = UsersTable.instance.dao.findAll()
         setContentView(R.layout.activity_menu)
         val rv:RecyclerView = findViewById(R.id.contact_list)
