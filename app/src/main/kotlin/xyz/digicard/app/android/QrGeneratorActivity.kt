@@ -40,8 +40,8 @@ class QrGeneratorActivity : AppCompatActivity() {
         private const val USER_ID_KEY = "user_id_key"
 
         fun startActivity(userId: UUID, context: Context) {
-            context.startActivity(Intent().apply {
-                extras.putString(USER_ID_KEY, userId.toString())
+            context.startActivity(Intent(context, QrGeneratorActivity::class.java).apply {
+                putExtra(USER_ID_KEY, userId.toString())
             })
         }
     }

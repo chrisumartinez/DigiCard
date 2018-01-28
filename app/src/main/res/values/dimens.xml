@@ -2,5 +2,6 @@
 <resources>
 
     <dimen name="connected_user_avatar_dimen">150dp</dimen>
+    <dimen name="fab_dimen">56dp</dimen>
 
 </resources>

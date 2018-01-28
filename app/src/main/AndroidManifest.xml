@@ -41,7 +41,9 @@
         <activity android:name=".Menu"/>
         <activity android:name=".ConnectedUserActivity"/>
 
-        <activity android:name=".QrGeneratorActivity"/>
+        <activity
+            android:name=".QrGeneratorActivity"
+            android:noHistory="true"/>
 
         <activity android:name=".NearbyConnections"/>
     </application>

@@ -41,5 +41,8 @@ dependencies {
 
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
 
+    implementation 'com.mikepenz:iconics-core:3.0.2@aar'
+    implementation 'com.mikepenz:community-material-typeface:2.0.46.1@aar'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
