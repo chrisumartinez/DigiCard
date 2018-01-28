@@ -1,40 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<FrameLayout
     android:id="@+id/root"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
-
-    <Button
-        android:id="@+id/nfc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/beam"
-        app:layout_constraintBottom_toBottomOf="@id/root"
-        app:layout_constraintLeft_toLeftOf="@id/root"
-        app:layout_constraintRight_toRightOf="@id/root"
-        app:layout_constraintTop_toTopOf="@id/root"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/menu"
-        android:text="Main Menu"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toRightOf="@id/root"
-        android:text = "Nearby Connections"
-        android:id="@+id/nearby_connections"/>
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Register"
-        app:layout_constraintBottom_toBottomOf="@id/root"
-        app:layout_constraintLeft_toLeftOf="@id/root"
-        app:layout_constraintRight_toRightOf="@id/root"
-        />
-</android.support.constraint.ConstraintLayout>
+    tools:context=".StartActivity"/>
