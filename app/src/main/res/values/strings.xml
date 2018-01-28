@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Digicard</string>
+    <string name="app_name">Digitar</string>
 
     <string name="firstName">First Name</string>
     <string name="lastName">Last Name</string>
