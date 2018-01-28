@@ -57,9 +57,25 @@ class NewAdapter(private val data: List<User>) : RecyclerView.Adapter<NewAdapter
 
             imgView.setImageDrawable(ResourcesCompat.getDrawable(
                     imgView.context.resources,
-                    R.drawable.user_photo_fallback,
+                    findDrawableResId(),
                     imgView.context.theme
             ))
+        }
+
+        private fun findDrawableResId(): Int {
+            val codeInt = user.id.toString().first().toInt().rem(9) + 1
+            return when (codeInt) {
+                1 -> R.drawable.a1
+                2 -> R.drawable.a2
+                3 -> R.drawable.a3
+                4 -> R.drawable.a4
+                5 -> R.drawable.a5
+                6 -> R.drawable.a6
+                7 -> R.drawable.a7
+                8 -> R.drawable.a8
+                9 -> R.drawable.a9
+                else -> R.drawable.user_photo_fallback
+            }
         }
     }
 }
