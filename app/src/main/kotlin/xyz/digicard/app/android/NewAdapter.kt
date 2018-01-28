@@ -28,9 +28,8 @@ class NewAdapter(private val data: List<User>) : RecyclerView.Adapter<NewAdapter
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
-        private val firstName: TextView
-        private val lastName: TextView
-        private val email: TextView
+        private val fullName: TextView
+        private val company: TextView
         private val imgView: ImageView
         private lateinit var user: User
 
@@ -39,39 +38,21 @@ class NewAdapter(private val data: List<User>) : RecyclerView.Adapter<NewAdapter
                 ConnectedUserActivity.startActivity(v.context, user.id)
             }
 
-            this.firstName = v.findViewById<View>(R.id.contact_first_name) as TextView
-            this.lastName = v.findViewById<View>(R.id.contact_last_name) as TextView
-            this.imgView = v.findViewById<View>(R.id.profile_image) as ImageView
-            this.email = v.findViewById<View>(R.id.email) as TextView
+            fullName = v.findViewById(R.id.full_name)
+            company = v.findViewById(R.id.company)
+            imgView = v.findViewById<View>(R.id.profile_image) as ImageView
         }
 
         fun bind(u: User) {
             user = u
-            firstName.text = u.firstName
-            lastName.text = u.lastName
-            email.text = u.email
+            fullName.text = u.fullName
+            company.text = u.company
 
             imgView.setImageDrawable(ResourcesCompat.getDrawable(
                     imgView.context.resources,
-                    findDrawableResId(),
+                    user.findProfilePicDrawableResId(),
                     imgView.context.theme
             ))
-        }
-
-        private fun findDrawableResId(): Int {
-            val codeInt = user.firstName.first().toInt().rem(9) + 1
-            return when (codeInt) {
-                1 -> R.drawable.a1
-                2 -> R.drawable.a2
-                3 -> R.drawable.a3
-                4 -> R.drawable.a4
-                5 -> R.drawable.a5
-                6 -> R.drawable.a6
-                7 -> R.drawable.a7
-                8 -> R.drawable.a8
-                9 -> R.drawable.a9
-                else -> R.drawable.user_photo_fallback
-            }
         }
     }
 }
