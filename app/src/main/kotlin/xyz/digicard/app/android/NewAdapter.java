@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -26,6 +27,11 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
         private ImageView imgView;
         public ViewHolder(View v){
             super(v);
+            v.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Toast.makeText(v.getContext(), "Fade into User Profile (Business Card)", Toast.LENGTH_SHORT).show();
+                }
+            });
             this.firstName = (TextView)v.findViewById(R.id.contact_first_name);
             this.lastName = (TextView)v.findViewById(R.id.contact_last_name);
             this.imgView = (ImageView)v.findViewById(R.id.profile_image);
