@@ -3,6 +3,7 @@ package xyz.digicard.app.android
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.jayrave.falkon.dao.insert
 import xyz.digicard.app.android.models.User
@@ -39,7 +40,10 @@ class StartActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.menu).setOnClickListener {
             startActivity(Intent(this, Menu::class.java))
+            val startActivityTAG:String = "StartActivity"
             val currentUserId = CurrentUser.getId(this)
+            val str = currentUserId.toString()
+            Log.i(startActivityTAG, str)
             when (currentUserId) {
                 null -> startActivity(Intent(this, NewActivity::class.java))
                 else -> startActivity(Intent(this, Menu::class.java))

@@ -3,17 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nearbyconnectionsbg"
     android:orientation="vertical"
     >
-
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="text"
-        android:background="@drawable/layout_rounded_corners"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

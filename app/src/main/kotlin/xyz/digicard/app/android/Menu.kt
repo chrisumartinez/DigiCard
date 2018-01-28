@@ -1,5 +1,6 @@
 package xyz.digicard.app.android
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -51,5 +52,15 @@ class Menu : AppCompatActivity() {
                         .actionBar()
                         .color(Color.WHITE)
         )
+
+        val nearbyConnection = findViewById<ImageView>(R.id.nearby_connections)
+        nearbyConnection.setImageDrawable(
+                IconicsDrawable(this, CommunityMaterial.Icon.cmd_access_point)
+                        .actionBar()
+                        .color(Color.WHITE)
+        )
+        nearbyConnection.setOnClickListener {
+            startActivity(Intent(this, NearbyConnections::class.java))
+        }
     }
 }

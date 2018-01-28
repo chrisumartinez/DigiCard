@@ -43,6 +43,14 @@
             android:layout_width="@dimen/fab_dimen"
             android:layout_height="@dimen/fab_dimen"/>
 
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/nearby_connections"
+            android:layout_width="56dp"
+            android:layout_height="56dp" />
     </LinearLayout>
 
 </FrameLayout>
