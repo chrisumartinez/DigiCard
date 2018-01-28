@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".App"
@@ -35,11 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".NewActivity">
-        </activity>
-        <activity android:name=".Menu">
-        </activity>
+
+        <activity android:name=".NewActivity"/>
+        <activity android:name=".Menu"/>
         <activity android:name=".ConnectedUserActivity"/>
+
+        <activity android:name=".QrGeneratorActivity"/>
+
         <activity android:name=".NearbyConnections"/>
     </application>
 
