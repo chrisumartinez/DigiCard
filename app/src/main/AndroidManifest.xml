@@ -45,6 +45,10 @@
             android:name=".QrGeneratorActivity"
             android:noHistory="true"/>
 
+        <activity
+            android:name=".QrReaderActivity"
+            android:noHistory="true"/>
+
         <activity android:name=".NearbyConnections"/>
     </application>
 

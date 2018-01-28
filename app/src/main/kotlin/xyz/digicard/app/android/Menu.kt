@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
 import android.widget.ImageView
 import com.jayrave.falkon.dao.findAll
 import com.mikepenz.community_material_typeface_library.CommunityMaterial
@@ -23,21 +22,32 @@ class Menu : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = NewAdapter(userObjects)
 
-        val addViaNfc = findViewById<ImageView>(R.id.add_via_nfc)
-        addViaNfc.setOnClickListener { NfcSendActivity.start(this, CurrentUser.getId(this)!!) }
-        addViaNfc.setImageDrawable(
+        val sendNdef = findViewById<ImageView>(R.id.send_ndef)
+        sendNdef.setOnClickListener { NfcSendActivity.start(this, CurrentUser.getId(this)!!) }
+        sendNdef.setImageDrawable(
                 IconicsDrawable(this, CommunityMaterial.Icon.cmd_nfc)
                         .actionBar()
                         .color(Color.WHITE)
         )
 
-        val addViaQrcode = findViewById<ImageView>(R.id.add_via_qrcode)
-        addViaQrcode.setOnClickListener {
+        val showQrCode = findViewById<ImageView>(R.id.show_qrcode)
+        showQrCode.setOnClickListener {
             QrGeneratorActivity.startActivity(CurrentUser.getId(this)!!, this)
         }
 
-        addViaQrcode.setImageDrawable(
+        showQrCode.setImageDrawable(
                 IconicsDrawable(this, CommunityMaterial.Icon.cmd_qrcode)
+                        .actionBar()
+                        .color(Color.WHITE)
+        )
+
+        val readQrCode = findViewById<ImageView>(R.id.read_qrcode)
+        readQrCode.setOnClickListener {
+            QrReaderActivity.startActivity(this)
+        }
+
+        readQrCode.setImageDrawable(
+                IconicsDrawable(this, CommunityMaterial.Icon.cmd_qrcode_scan)
                         .actionBar()
                         .color(Color.WHITE)
         )

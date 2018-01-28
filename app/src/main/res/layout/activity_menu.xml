@@ -15,13 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
+        android:layout_marginBottom="12dp"
         android:orientation="vertical"
-        android:paddingBottom="12dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/add_via_nfc"
+            android:id="@+id/send_ndef"
             android:layout_width="@dimen/fab_dimen"
             android:layout_height="@dimen/fab_dimen"/>
 
@@ -30,7 +30,16 @@
             android:layout_height="12dp"/>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/add_via_qrcode"
+            android:id="@+id/show_qrcode"
+            android:layout_width="@dimen/fab_dimen"
+            android:layout_height="@dimen/fab_dimen"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/read_qrcode"
             android:layout_width="@dimen/fab_dimen"
             android:layout_height="@dimen/fab_dimen"/>
 
