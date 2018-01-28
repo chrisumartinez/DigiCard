@@ -8,6 +8,10 @@ data class User(
         val lastName: String,
         val email: String,
         val phone: String? = null,
+        val company: String? = null,
         val photoUrl: String? = null,
-        val linkedInUrl: String? = null
-)
+        val linkedInUrl: String? = null,
+        val tags: String? = null) {
+
+    val fullName get() = "$firstName $lastName"
+}

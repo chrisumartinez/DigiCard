@@ -24,20 +24,20 @@
             android:layout_height="16dp"/>
 
         <include
-            android:id="@+id/first_name"
-            layout="@layout/connected_user_text_info_section"/>
+            android:id="@+id/full_name"
+            layout="@layout/connected_user_text_info"/>
 
         <include
-            android:id="@+id/last_name"
-            layout="@layout/connected_user_text_info_section"/>
+            android:id="@+id/company"
+            layout="@layout/connected_user_text_info"/>
 
         <include
             android:id="@+id/email"
-            layout="@layout/connected_user_text_info_section"/>
+            layout="@layout/connected_user_text_info"/>
 
         <include
             android:id="@+id/phone_number"
-            layout="@layout/connected_user_text_info_section"/>
+            layout="@layout/connected_user_text_info"/>
 
     </LinearLayout>
 
